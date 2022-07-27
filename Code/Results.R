@@ -95,9 +95,9 @@ mapCountryData(Figure1a_spatial_df,                                             
                missingCountryCol = "Grey")                                                                    #If country is missing data, fill with grey
 
 
-### Supplemental Figure 1: Influence of imbalanced contacts reported by <15 with 15+ on R0 ###
+### Supplemental Figure 2: Influence of imbalanced contacts reported by <15 with 15+ on R0 ###
 
-## FigureS1b ##
+## FigureS2b ##
 
 #Assign ratios of Cyo (Population contacts reported by <15 with 15+; imbalanced/balanced) to variables for ease of use in ggpplot Figure S1 code 
 C_yo_ratio_GMB = subset(Impact_balancing_R0, iso3c =="GMB")[[c("C_yo_imbalance")]]                            #Assign Gambia C_yo ratio (imbalanced/balanced) to variable 
@@ -105,8 +105,8 @@ C_yo_ratio_LUX = subset(Impact_balancing_R0, iso3c =="LUX")[[c("C_yo_imbalance")
 C_yo_ratio_SGP = subset(Impact_balancing_R0, iso3c =="SGP")[[c("C_yo_imbalance")]]                            #Assign Singapore C_yo ratio (imbalanced/balanced) to variable
 
 
-#Plot figureS1b first because colour scheme are used to colour FigureS1a
-FigureS1b = 
+#Plot figureS2b first because colour scheme are used to colour FigureS1a
+FigureS2b = 
   ggplot(Impact_balancing_R0,
          aes(x = C_yo_imbalanced/C_yo_balanced,
              y = R0_imbalanced/R0_balanced)) +
@@ -127,21 +127,21 @@ FigureS1b =
                      breaks = seq(0.94, 1.00, 0.02)) +
   scale_color_continuous_diverging("Blue-Red 3", trans = "log", limits = c(0.4, 2.5), breaks = c(0.5, 1, 2))  #colour data points according to imbalance in contacts <15 reported with 15+ (Cyo)
 
-FigureS1b
+FigureS2b
 
-ggsave(file= paste0("./Figures/FigureS1b.png"), 
-       width = 6.5, height = 4, limitsize = FALSE, FigureS1b)                                                 #Save FigureS1b as .png file
+ggsave(file= paste0("./Figures/FigureS2b.png"), 
+       width = 6.5, height = 4, limitsize = FALSE, FigureS2b)                                                 #Save FigureS1b as .png file
 
-## FigureS1a ##
+## FigureS2a ##
 
-FigureS1_colours = ggplot_build(FigureS1b)$data[[1]] %>%                                                      #save FigureS1b data point colours in variable for FigureS1a 
+FigureS2_colours = ggplot_build(FigureS2b)$data[[1]] %>%                                                      #save FigureS1b data point colours in variable for FigureS1a 
   arrange(x)
 
 mapCountryData(Figure1a_spatial_df,                                                                           #Plot distribution of Cyo imbalance globally using colourscheme from FigureS1b
                nameColumnToPlot = 'C_yo_imbalance',                                                           #NOTE: uses spatial data frame created for Figure 1 must manually save this figure and merge with 1a outside of R
                catMethod = "fixedWidth",                                                                      #NOTE:manually saved plot and merged with Figure1b outside of R workspace
                numCats = 177,                                                                                
-               colourPalette = FigureS1_colours$colour,                                                       #Colour countries according to colour palette from FigureS1b
+               colourPalette = FigureS2_colours$colour,                                                       #Colour countries according to colour palette from FigureS1b
                addLegend = F,                                    
                mapTitle = "",                                                                                 
                missingCountryCol = "Grey")                                                                    #If countries not included in Prem analysis, colour in grey
@@ -252,7 +252,7 @@ Figure3b =                                                                      
   scale_y_continuous(limits = c(-12, 4),                                             #Set y axis limits
                      breaks = seq(-12, 4, 2)) + 
   xlab(label= "Age Group") +                                                         #Label x axis
-  ylab(label= "% Difference in Cumulative Infections") +                             #Label y axis                                                                    
+  ylab(label= "% Difference in Cumulative Infections \n (imbal vs. bal)") +           #Label y axis                                                                    
   labs(fill = bquote(C['imbal']~'/'~C['bal'])) +                                     #Label legend
   theme_bw() +
   facet_wrap(~context, nrow = 1) +                                                   #stratify by demographic context
@@ -305,7 +305,7 @@ Figure4a =                                                                      
   scale_y_continuous(limits = c(-25, 40),                                           #Set y axis limits
                      breaks = seq(-24, 40, 8)) + 
   xlab(label= "Age Group") +                                                        #Label x axis
-  ylab(label= "% Difference in Infections Averted") +                               #Label y axis                                           
+  ylab(label= "% Difference in Infections Averted \n (imbal vs. bal)") +            #Label y axis                                           
   labs(fill = bquote(C['imbal']~'/'~C['bal'])) +                                    #Label legend
   theme_bw() + 
   facet_wrap(~context, nrow = 1) +                                                  #Stratify by demographic context
@@ -340,7 +340,7 @@ Figure4b =                                                                      
   scale_y_continuous(limits = c(-25, 40),                                           #Set y axis limits
                      breaks = seq(-24, 40, 8)) + 
   xlab(label= "Age Group") +                                                        #Label x axis
-  ylab(label= "% Difference in Infections Averted") +                               #Label y axis
+  ylab(label= "% Difference in Infections Averted \n (imbal vs. bal)") +            #Label y axis
   labs(fill = bquote(C['imbal']~'/'~C['bal'])) +                                    #Label legend
   theme_bw() +                                       
   facet_wrap(~context, nrow = 1) +                                                  #Stratify by demographic context

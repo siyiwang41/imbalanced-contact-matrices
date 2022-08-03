@@ -24,7 +24,7 @@ library(dplyr)
 library(writexl)
 library(readxl)
 
-setwd("~/GitHub/Balancing_C_Impact2")                        #Set working directory
+setwd("~/GitHub/imbalanced-contact-matrices")                #Set working directory
 
 source("./Code/Functions.R")                                 #Load general functions
 source("./Code/Model.R")                                     #Load SEIR model function and model parameters

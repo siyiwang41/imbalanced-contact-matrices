@@ -25,7 +25,7 @@ library(gridGraphics)
 library(cowplot)
 library(colorspace)
 
-setwd("~/GitHub/Balancing_C_Impact2")                       #Set working directory
+setwd("~/GitHub/imbalanced-contact-matrices")               #Set working directory
 
 load("./Data/Contacts_scenarios.RData")                     #Load contact matrix dataframe for 3 countries: Gambia, Luxembourg and Singapore
 load("./Output/Aim1_Impact_balancing_R0.RData")             #Load aim 1 output (impact of imbalanced contact matrix on R0)

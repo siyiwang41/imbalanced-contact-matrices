@@ -166,7 +166,7 @@ Impact_balancing_R0_valid1 =                                                    
          R0_oy_imbalance_ratio, R0_change)
 
 save(Impact_balancing_R0_valid1, file = "./Output/Validity_AgeStrat_R0.RData")      #Save data in RData format
-write_xlsx(Impact_balancing_R0_valid1, "./Output/Validity_AgeStrat_R0.RData.xlsx")  #Save data in xlsx format
+write_xlsx(Impact_balancing_R0_valid1, "./Output/Validity_AgeStrat_R0.xlsx")  #Save data in xlsx format
 
 ############################################ Plot bias in basic reproduction number ###################
 

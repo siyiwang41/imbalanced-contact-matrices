@@ -6,8 +6,8 @@
 ### DATASETS USED:    Aim1_Impact_balancing_R0.RData, Aim2_SimulationOutput.RData, 
 ###                     Aim2_Cum_Infections_difference.RData, Aim3_VaxImpact_strat1.RData, 
 ###                     Aim3_VaxImpact_strat2.RData
-### DATASETS OUTPUT:  Figure1a.png, Figure1b.png, Figure2.png, Figure3.png, Figure4.png, FigureS1a.png, 
-###                     FigureS1b.png, FigureS2.png
+### DATASETS OUTPUT:  Figure1a.png, Figure1b.png, Figure2.png, Figure3.png, Figure4.png, FigureS2a.png, 
+###                     FigureS2b.png, FigureS3.png
 ############################################ Code Setup ###############################################
 
 library(tibble)

@@ -15,7 +15,7 @@ library(ggplot2)
 library(colorspace)
 library(ggpubr)
 
-setwd("~/GitHub/Balancing_C_Impact2")           #set working directory
+setwd("~/GitHub/imbalanced-contact-matrices")           #set working directory
 
 source("./Code/Functions.R")                    #load functions
 

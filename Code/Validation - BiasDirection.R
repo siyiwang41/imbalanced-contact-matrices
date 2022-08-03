@@ -125,7 +125,7 @@ Impact_balancing_R0_valid2 =                                                    
          R0_yo_imbalance_ratio_2, R0_oy_imbalance_ratio_2, R0_change_2)
 
 save(Impact_balancing_R0_valid2, file = "./Output/Validity_BiasDirection_R0.RData")     #Save data in RData format
-write_xlsx(Impact_balancing_R0_valid2, "./Output/Validity_BiasDirection_R0.RData.xlsx") #Save data in xlsx format
+write_xlsx(Impact_balancing_R0_valid2, "./Output/Validity_BiasDirection_R0.xlsx") #Save data in xlsx format
 
 
 

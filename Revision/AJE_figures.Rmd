@@ -1,0 +1,43 @@
+---
+title: "AJE technical review"
+author: "Siyi Wang"
+date: '2023-04-27'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Figure revisions
+
+- Format
+  + Move legend into panel, stacked and from top to bottom
+  + Center and underline the legend title
+  + Add legend box with 1 pt in weight
+  + Use $\geq 15$ instead of $15+$ 
+  + Make Math symbol italic
+  + Remove the upper and right rules
+  + Remove the internal rules
+  + Remove the internal text
+  + Remove bolding, except for vectors
+  + Remove shading and boxes from the facet heading
+  + Width $\leq 7$, height $\leq 9$ in portrait version
+  + Font size ($\geq 8$ pt) and style
+  + Comma instead of parenthese in x- and y-axis titles
+  + Use commas to denote thousands
+  + Extend x- and y-axis at the end
+  
+- Colourbar
+  + Change 'Blue-red 3' to 'Blue-red', make it darker
+  + Make grey darker
+- Multipanel figures
+  + Each panel has its own x- and y-axis labels and titles
+  + Use A), B), C) instead of facet titles
+  
+## Discussion
+
+- Multipanel headings
+- Figure 1 scale bar
+- Figure 2 position
+- Figure 4 annotated pictures
